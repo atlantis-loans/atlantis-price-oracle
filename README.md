@@ -1,8 +1,3 @@
-![build](https://github.com/binance-cloud/binance-oracle/actions/workflows/build.yml/badge.svg?branch=main)
-![npm (scoped)](https://img.shields.io/npm/v/@binance-oracle/binance-oracle-starter)
-![npm](https://img.shields.io/npm/dw/@binance-oracle/binance-oracle-starter)
-![website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Foracle.binance.com%2F)
-
 # Atlantis-Price-Oracle
 Atlantis Price Oracle is a multi-price oracle solution using a combination of Chainlink and Binance price oracle sources to return a recent average price of an asset on BSC.
 
