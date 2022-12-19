@@ -45,13 +45,15 @@ contract AtlantisPriceOracle is AtlantisPriceOracleStorage {
     }
 
     function getPrice(IAToken aToken) internal view returns (uint256 price) {
-        if (prices[address(aToken)] != 0) {
-            price = prices[address(aToken)];
+        IERC20 token = IERC20(aToken.underlying());
+
+        if (prices[address(token)] != 0) {
+            price = prices[address(token)];
         } else {
-            price = getOraclePrice(IERC20(aToken.underlying()).symbol());
+            price = getOraclePrice(token.symbol());
         }
 
-        uint256 decimalDelta = uint256(18).sub(uint256(IERC20(aToken.underlying()).decimals()));
+        uint256 decimalDelta = uint256(18).sub(uint256(token.decimals()));
         // Ensure that we don't multiply the result by 0
         if (decimalDelta > 0) {
             return price.mul(10 ** decimalDelta);

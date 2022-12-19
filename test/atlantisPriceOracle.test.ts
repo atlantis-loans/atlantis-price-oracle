@@ -137,7 +137,7 @@ describe("Test Atlantis Price Oracle", () => {
 
     it("return underlying price of aATL without feed (using direct price)", async () => {
       const atlPrice = new BigNumber(2).toString();
-      await atlantisPriceOracle.connect(admin).setDirectPrice(AATL_ADDRESS, atlPrice)
+      await atlantisPriceOracle.connect(admin).setDirectPrice(ATL_ADDRESS, atlPrice)
 
       expect(await atlantisPriceOracle.getUnderlyingPrice(AATL_ADDRESS))
         .to.equal(atlPrice.toString());
